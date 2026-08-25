@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import type { SanityImageSource } from "@sanity/image-url";
+import { Suspense } from "react";
 import { client } from "@/sanity/lib/client";
 import { SITE_DESCRIPTION, SITE_NAME } from "@/app/lib/site";
 import { Hero } from "./Hero/components/Hero";
@@ -45,9 +46,12 @@ async function getLatestPosts() {
   return client.fetch<Post[]>(query);
 }
 
-export default async function Home() {
+async function LatestInsightsSection() {
   const posts = await getLatestPosts();
+  return <LatestInsights posts={posts} />;
+}
 
+export default function Home() {
   return (
     <>
       <IntroRibbon />
@@ -60,7 +64,9 @@ export default async function Home() {
       <AnalyticsLayer />
       <AudienceGrid />
       <ProvenResults />
-      <LatestInsights posts={posts} />
+      <Suspense fallback={null}>
+        <LatestInsightsSection />
+      </Suspense>
       <CtaSection />
     </>
   );
