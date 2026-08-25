@@ -242,7 +242,9 @@ export function Header() {
             Support
           </Link>
           <Link
-            href="/#cta"
+            href="https://workspace.rams.digital"
+            target="_blank"
+            rel="noopener noreferrer"
             className="rounded-full border border-white/15 px-2.5 py-0.5 font-semibold text-white/75 hover:border-white/30 hover:text-white"
           >
             Platform Login
