@@ -227,7 +227,7 @@ export function IntroRibbon() {
 
   function handleCut() {
     setPhase("cutting");
-    setConfetti(createConfetti(90));
+    setConfetti(createConfetti(100));
 
     window.setTimeout(() => {
       setPhase("celebrating");
@@ -245,7 +245,8 @@ export function IntroRibbon() {
     window.setTimeout(() => {
       window.localStorage.setItem(STORAGE_KEY, "1");
       setDismissed(true);
-    }, 3200);
+      window.open("https://www.workspace.rams.digital/", "_blank", "noopener,noreferrer");
+    }, 2750);
   }
 
   return (
