@@ -4,7 +4,6 @@ import { Suspense } from "react";
 import { client } from "@/sanity/lib/client";
 import { SITE_DESCRIPTION, SITE_NAME } from "@/app/lib/site";
 import { Hero } from "./Hero/components/Hero";
-import { IntroRibbon } from "./Hero/components/IntroRibbon";
 import { HeroStats } from "./Hero/components/HeroStats";
 import { Capabilities } from "./Hero/components/Capabilities";
 import { AtosUnlocks } from "./Hero/components/AtosUnlocks";
@@ -54,7 +53,6 @@ async function LatestInsightsSection() {
 export default function Home() {
   return (
     <>
-      <IntroRibbon />
       <Hero />
       <HeroStats />
       <Capabilities />
